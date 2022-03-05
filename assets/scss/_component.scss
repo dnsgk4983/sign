@@ -1,0 +1,39 @@
+// 프로젝트 내에서 공통으로 쓰이는 부분
+.btn {
+    display: block;
+    width: 100%;
+    line-height: 1;
+    border-radius: 3px;
+    padding: 14px 0;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    &.shadow {
+        box-shadow: 3px 3px 10px rgba(0,0,0,0.15);
+    }
+    &.btn-gray {
+        background: $gray-color;
+        color: $font-color;
+    }
+    &.btn-yellow {
+        background: $yellow-color;
+        color: $font-color;
+    }
+}
+
+.txt-stamp {
+    width: 150px;
+    height: 20px;
+}
+.check-stamp {
+    width: 15px;
+    height: 15px;
+}
+.sign-stamp {
+    width: 25px;
+    height: 25px;
+    background-color: #fff;
+    border: 5px solid #35a67d;
+    border-radius: 100px;
+}

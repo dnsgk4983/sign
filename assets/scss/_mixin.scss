@@ -1,0 +1,32 @@
+// mixin
+@mixin pc {
+    @media (max-width: $pc) {
+        @content;
+    }
+}
+@mixin tablet {
+    @media (max-width: $tablet) {
+        @content;
+    }
+}
+@mixin mobile {
+    @media (max-width: $mobile) {
+        @content;
+    }
+}
+
+// flex
+@mixin flex($align: null, $justify: null) {
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+}
+
+// position
+@mixin position ($position, $top: null, $right: null, $bottom: null, $left: null) {
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}

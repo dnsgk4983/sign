@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>Zik Pay</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <style>
+        .area{
+            /* z-index: -1; */
+            /* position: relative; */
+        }
+        .area__box{
+            z-index: 900;
+            position: absolute;
+            top: 0;
+            left: 0;
+            cursor: pointer;
+        }
+        .drag-form{
+            position: absolute;
+            z-index: 999;
+            top: 0;
+            left: 0;
+            /* z-index: 999;
+            position: absolute;
+            top: 0;
+            left: 0;
+            cursor: pointer; */
+        }
+    </style>
+</head>
+<body>
+    <div class="sub-page">
+        <header class="sub-page__header">
+            <button class="exit">나가기</button>
+            <ol class="chapter">
+                <li class="active">➀ 기본 설정</li>
+                <li>➁ 입력 설정</li>
+                <li>➂ 기타 설정</li>
+            </ol>
+            <div class="option">
+                <div class="btn-wrap">
+                    <button class="help">도움말</button>
+                </div>
+                <div class="select-wrap">
+                    <button class="select-btn btn">▾</button>
+                    <select id="view-mode" name="view-mode" class="view-mode">
+                        <option value="">임시저장</option>
+                        <option value="">다운로드</option>
+                        <option value="">새 템플릿으로 저장</option>
+                    </select>
+                </div>
+            </div>
+        </header>
+        
+        <aside class="sub-page__menu">
+            <nav class="menu-option">
+                <span class="menu-option__title">
+                    문서 내용 추가하기
+                </span>
+
+                <div class="menu-option__wrap">
+                    <p class="descript">
+                        문서에 추가내용을 입력하여 요청합니다.
+                    </p>
+                    <ul class="btn_list">
+                        <li>
+                            <button class="btn text-btn" onclick="createForm('textarea');">
+                                텍스트 입력하기
+                                <?xml version="1.0" encoding="utf-8"?>
+                                <svg version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="17px" height="17px"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g transform="matrix(1 0 0 1 -228 -161 )">
+                                        <path
+                                            d="M 15.454545454545453 4.636363636363636  L 17 4.636363636363636  L 17 0  L 12.363636363636363 0  L 12.363636363636363 1.5454545454545454  L 4.636363636363636 1.5454545454545454  L 4.636363636363636 0  L 0 0  L 0 4.636363636363636  L 1.5454545454545454 4.636363636363636  L 1.5454545454545454 12.363636363636363  L 0 12.363636363636363  L 0 17  L 4.636363636363636 17  L 4.636363636363636 15.454545454545453  L 12.363636363636363 15.454545454545453  L 12.363636363636363 17  L 17 17  L 17 12.363636363636363  L 15.454545454545453 12.363636363636363  L 15.454545454545453 4.636363636363636  Z M 1.5454545454545454 3.090909090909091  L 1.5454545454545454 1.5454545454545454  L 3.090909090909091 1.5454545454545454  L 3.090909090909091 3.090909090909091  L 1.5454545454545454 3.090909090909091  Z M 3.090909090909091 13.90909090909091  L 3.090909090909091 15.454545454545453  L 1.5454545454545454 15.454545454545453  L 1.5454545454545454 13.90909090909091  L 3.090909090909091 13.90909090909091  Z M 12.363636363636363 12.363636363636363  L 12.363636363636363 13.90909090909091  L 4.636363636363636 13.90909090909091  L 4.636363636363636 12.363636363636363  L 3.090909090909091 12.363636363636363  L 3.090909090909091 4.636363636363636  L 4.636363636363636 4.636363636363636  L 4.636363636363636 3.090909090909091  L 12.363636363636363 3.090909090909091  L 12.363636363636363 4.636363636363636  L 13.90909090909091 4.636363636363636  L 13.90909090909091 12.363636363636363  L 12.363636363636363 12.363636363636363  Z M 15.454545454545453 13.90909090909091  L 15.454545454545453 15.454545454545453  L 13.90909090909091 15.454545454545453  L 13.90909090909091 13.90909090909091  L 15.454545454545453 13.90909090909091  Z M 15.454545454545453 3.090909090909091  L 13.90909090909091 3.090909090909091  L 13.90909090909091 1.5454545454545454  L 15.454545454545453 1.5454545454545454  L 15.454545454545453 3.090909090909091  Z M 10.408636363636367 11.59090909090909  L 9.836818181818181 10.045454545454547  L 7.14 10.045454545454547  L 6.57590909090909 11.59090909090909  L 5.324090909090909 11.59090909090909  L 7.951363636363636 4.636363636363636  L 9.033181818181818 4.636363636363636  L 11.668181818181818 11.59090909090909  L 10.408636363636367 11.59090909090909  Z M 8.5 6.112272727272727  L 7.487727272727273 9.071818181818182  L 9.504545454545454 9.071818181818182  L 8.5 6.112272727272727  Z "
+                                            fill-rule="nonzero" fill="#ffffff" stroke="none" transform="matrix(1 0 0 1 228 161 )" />
+                                    </g>
+                                </svg>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="btn">
+                                체크박스 입력하기
+                                <?xml version="1.0" encoding="utf-8"?>
+                                <svg version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g transform="matrix(1 0 0 1 -227 -203 )">
+                                        <path
+                                            d="M 18 2  C 18 0.8999999999999999  17.1 0  16 0  L 2 0  C 0.8999999999999999 0  0 0.8999999999999999  0 2  L 0 16  C 0 17.1  0.8999999999999999 18  2 18  L 16 18  C 17.1 18  18 17.1  18 16  L 18 2  Z M 16 2  L 16 16  L 2 16  L 2 2  L 16 2  Z M 6.989999999999998 14  L 14.989999999999998 6  L 13.579999999999998 4.58  L 6.989999999999998 11.17  L 4.409999999999998 8.6  L 2.9899999999999984 10.01  L 6.989999999999998 14  Z "
+                                            fill-rule="nonzero" fill="#ffffff" stroke="none" transform="matrix(1 0 0 1 227 203 )" />
+                                    </g>
+                                </svg>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="btn">
+                                내 서명 입력하기
+                                <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="9.5" cy="9.5" r="8.5" stroke="white" stroke-width="2" />
+                                    <circle cx="9.5" cy="9.5" r="8.5" stroke="white" stroke-opacity="0.2" stroke-width="2" />
+                                    <circle cx="9.5" cy="9.5" r="4.5" fill="white" />
+                                </svg>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <button class="add-person btn shadow">
+                서명할 참여자 추가하기
+                <i class="icon">+</i>
+            </button>
+        </aside>
+    
+        <section class="sub-page__list">
+            <ul class="sub-page__list__items">
+                <li class="img_box">
+                    <img class="" src="assets/images/contract1.svg" />
+                </li>
+                <li class="img_box">
+                    <img class="" src="assets/images/contract2.svg" />
+                </li>
+                <li class="img_box">
+                    <img class="" src="assets/images/contract3.svg" />
+                </li>
+                <li class="img_box">
+                    <img class="" src="assets/images/contract1.svg" />
+                </li>
+                <li class="img_box">
+                    <img class="" src="assets/images/contract2.svg" />
+                </li>
+                <li class="img_box">
+                    <img class="" src="assets/images/contract3.svg" />
+                </li>
+            </ul>
+
+            <div class="line"></div>
+        </section>
+
+        <section class="sub-page__content area">
+            
+            <div class="img_box">
+                <img class="" src="assets/images/contract1.svg" />
+            </div>
+            <div class="img_box">
+                <img class="" src="assets/images/contract2.svg" />
+            </div>
+            <div class="img_box">
+                <img class="" src="assets/images/contract3.svg" />
+            </div>
+
+            <div class="content-btns">
+                <button class="btn prev step shadow">
+                    <span>⟪</span>
+                    <p>이전 단계</p>
+                </button>
+                <div class="btn-wrap">
+                    <button class="btn zoom-out zoom shadow">
+                        <?xml version="1.0" encoding="utf-8"?>
+                        <svg version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="62px" height="62px"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <g id="widget90">
+                                    <path
+                                        d="M 38.769230769230774 42  L 3.230769230769231 42  C 1.4215384615385154 42  0 40.57846153846161  0 38.769230769230774  L 0 3.230769230769231  C 0 1.421538461538393  1.4215384615385154 0  3.230769230769231 0  L 38.769230769230774 0  C 40.57846153846149 0  42 1.421538461538393  42 3.230769230769231  L 42 38.769230769230774  C 42 40.57846153846161  40.57846153846149 42  38.769230769230774 42  Z M 27.993689903846157 16.945763221153847  C 27.271534455128247 15.708283253205048  26.29171674679483 14.728465544871876  25.054236778846153 14.006310096153847  C 23.816756810897477 13.284154647435814  22.465344551282094 12.923076923076923  21 12.923076923076923  C 19.53465544871791 12.923076923076923  18.183243189102523 13.284154647435814  16.945763221153847 14.006310096153847  C 15.708283253205169 14.728465544871876  14.728465544871755 15.708283253205048  14.006310096153847 16.945763221153847  C 13.284154647435939 18.183243189102644  12.923076923076923 19.53465544871803  12.923076923076923 21  C 12.923076923076923 22.465344551281966  13.284154647435939 23.816756810897356  14.006310096153847 25.054236778846153  C 14.728465544871755 26.291716746794954  15.708283253205169 27.271534455128123  16.945763221153847 27.993689903846157  C 18.183243189102523 28.715845352564184  19.53465544871791 29.076923076923077  21 29.076923076923077  C 22.465344551282094 29.076923076923077  23.816756810897477 28.715845352564184  25.054236778846153 27.993689903846157  C 26.29171674679483 27.271534455128123  27.271534455128247 26.291716746794954  27.993689903846157 25.054236778846153  C 28.715845352564063 23.816756810897356  29.076923076923077 22.465344551281966  29.076923076923077 21  C 29.076923076923077 19.53465544871803  28.715845352564063 18.183243189102644  27.993689903846157 16.945763221153847  Z M 25.51171875 22.146334134615383  C 25.3785056089744 22.279547275641107  25.220753205128247 22.346153846153847  25.038461538461537 22.346153846153847  L 16.961538461538463 22.346153846153847  C 16.779246794871757 22.346153846153847  16.6214943910256 22.279547275641107  16.48828125 22.146334134615383  C 16.3550681089744 22.01312099358966  16.28846153846154 21.85536858974351  16.28846153846154 21.673076923076927  L 16.28846153846154 20.326923076923077  C 16.28846153846154 20.14463141025649  16.3550681089744 19.98687900641034  16.48828125 19.853665865384617  C 16.6214943910256 19.720452724358893  16.779246794871757 19.653846153846153  16.961538461538463 19.653846153846153  L 25.038461538461537 19.653846153846153  C 25.220753205128247 19.653846153846153  25.3785056089744 19.720452724358893  25.51171875 19.853665865384617  C 25.6449318910256 19.98687900641034  25.711538461538463 20.14463141025649  25.711538461538463 20.326923076923077  L 25.711538461538463 21.673076923076927  C 25.711538461538463 21.85536858974351  25.6449318910256 22.01312099358966  25.51171875 22.146334134615383  Z "
+                                        fill-rule="nonzero" fill="#7f7f7f" stroke="none" transform="matrix(1 0 0 1 135 0 )" />
+                                </g>
+                            </defs>
+                            <g transform="matrix(1 0 0 1 -128 7 )">
+                                <use xlink:href="#widget90" filter="url(#filter89)" />
+                                <use xlink:href="#widget90" />
+                            </g>
+                        </svg>
+                    </button>
+                    <button class="btn zoom-in zoom shadow">
+                        <?xml version="1.0" encoding="utf-8"?>
+                        <svg version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="62px" height="62px"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <g id="widget86">
+                                    <path
+                                        d="M 38.769230769230774 42  L 3.230769230769231 42  C 1.4215384615385154 42  0 40.57846153846161  0 38.769230769230774  L 0 3.230769230769231  C 0 1.421538461538393  1.4215384615385154 0  3.230769230769231 0  L 38.769230769230774 0  C 40.57846153846149 0  42 1.421538461538393  42 3.230769230769231  L 42 38.769230769230774  C 42 40.57846153846161  40.57846153846149 42  38.769230769230774 42  Z M 27.993689903846157 16.945763221153847  C 27.271534455128247 15.708283253205048  26.29171674679483 14.728465544871876  25.054236778846153 14.006310096153847  C 23.816756810897477 13.284154647435814  22.465344551282094 12.923076923076923  21 12.923076923076923  C 19.53465544871791 12.923076923076923  18.183243189102523 13.284154647435814  16.945763221153847 14.006310096153847  C 15.708283253205169 14.728465544871876  14.728465544871755 15.708283253205048  14.006310096153847 16.945763221153847  C 13.284154647435939 18.183243189102644  12.923076923076923 19.53465544871803  12.923076923076923 21  C 12.923076923076923 22.465344551281966  13.284154647435939 23.816756810897356  14.006310096153847 25.054236778846153  C 14.728465544871755 26.291716746794954  15.708283253205169 27.271534455128123  16.945763221153847 27.993689903846157  C 18.183243189102523 28.715845352564184  19.53465544871791 29.076923076923077  21 29.076923076923077  C 22.465344551282094 29.076923076923077  23.816756810897477 28.715845352564184  25.054236778846153 27.993689903846157  C 26.29171674679483 27.271534455128123  27.271534455128247 26.291716746794954  27.993689903846157 25.054236778846153  C 28.715845352564063 23.816756810897356  29.076923076923077 22.465344551281966  29.076923076923077 21  C 29.076923076923077 19.53465544871803  28.715845352564063 18.183243189102644  27.993689903846157 16.945763221153847  Z M 25.51171875 22.146334134615383  C 25.3785056089744 22.279547275641107  25.220753205128247 22.346153846153847  25.038461538461537 22.346153846153847  L 22.346153846153847 22.346153846153847  L 22.346153846153847 25.038461538461537  C 22.346153846153847 25.220753205128123  22.279547275640983 25.37850560897428  22.146334134615383 25.51171875  C 22.013120993589784 25.64493189102572  21.85536858974363 25.711538461538463  21.673076923076927 25.711538461538463  L 20.326923076923077 25.711538461538463  C 20.14463141025637 25.711538461538463  19.986879006410216 25.64493189102572  19.853665865384617 25.51171875  C 19.720452724359014 25.37850560897428  19.653846153846153 25.220753205128123  19.653846153846153 25.038461538461537  L 19.653846153846153 22.346153846153847  L 16.961538461538463 22.346153846153847  C 16.779246794871757 22.346153846153847  16.6214943910256 22.279547275641107  16.48828125 22.146334134615383  C 16.3550681089744 22.01312099358966  16.28846153846154 21.85536858974351  16.28846153846154 21.673076923076927  L 16.28846153846154 20.326923076923077  C 16.28846153846154 20.14463141025649  16.3550681089744 19.98687900641034  16.48828125 19.853665865384617  C 16.6214943910256 19.720452724358893  16.779246794871757 19.653846153846153  16.961538461538463 19.653846153846153  L 19.653846153846153 19.653846153846153  L 19.653846153846153 16.961538461538463  C 19.653846153846153 16.779246794871877  19.720452724359014 16.62149439102572  19.853665865384617 16.48828125  C 19.986879006410216 16.35506810897428  20.14463141025637 16.28846153846154  20.326923076923077 16.28846153846154  L 21.673076923076927 16.28846153846154  C 21.85536858974363 16.28846153846154  22.013120993589784 16.35506810897428  22.146334134615383 16.48828125  C 22.279547275640983 16.62149439102572  22.346153846153847 16.779246794871877  22.346153846153847 16.961538461538463  L 22.346153846153847 19.653846153846153  L 25.038461538461537 19.653846153846153  C 25.220753205128247 19.653846153846153  25.3785056089744 19.720452724358893  25.51171875 19.853665865384617  C 25.6449318910256 19.98687900641034  25.711538461538463 20.14463141025649  25.711538461538463 20.326923076923077  L 25.711538461538463 21.673076923076927  C 25.711538461538463 21.85536858974351  25.6449318910256 22.01312099358966  25.51171875 22.146334134615383  Z "
+                                        fill-rule="nonzero" fill="#7f7f7f" stroke="none" transform="matrix(1 0 0 1 182 0 )" />
+                                </g>
+                            </defs>
+                            <g transform="matrix(1 0 0 1 -175 7 )">
+                                <use xlink:href="#widget86" filter="url(#filter85)" />
+                                <use xlink:href="#widget86" />
+                            </g>
+                        </svg>
+                    </button>
+                </div>
+                <button class="btn next shadow step">
+                    <p>다음 단계</p>
+                    <span>⟫</span>
+                </button>
+            </div>
+        </section>
+        
+    </div>
+
+    <script src="assets/js/jquery-3.2.1.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        // 문서 내용 추가하기
+        let formType;
+        let formNum = {
+            txt: 0,
+            check: 0,
+            sign: 0
+        };
+        const content = document.querySelector(".sub-page__content");
+
+        function createForm(target) {
+            formType = target;
+            let x = event.pageX;
+            let y = event.pageY;
+            const formWrap = document.createElement('div');
+            formWrap.classList.add('drag-form');
+
+            const formItem = document.createElement(formType);
+
+            
+            formItem.setAttribute("disabled", "disabled");
+
+            formWrap.style.position = `absolute`;
+            document.addEventListener("mousemove", (e) => {
+                formWrap.style.left = `${x - 10}px`;
+                formWrap.style.top = `${y - 15}px`;
+            });
+
+                if (formItem.tagName == 'TEXTAREA') {
+                    ++formNum.txt;
+                    formItem.setAttribute('placeholder', `텍스트${formNum.txt}`);
+                    formItem.setAttribute('id', `txtStamp${formNum.txt - 1}`);
+                    formItem.classList += 'drag-form';
+                } else if (formItem.tagName == 'INPUT') {
+                    ++formNum.check;
+                    formItem.setAttribute('type', 'checkbox');
+                    formItem.setAttribute("id", `checkStamp${formNum.check - 1}`);
+                    formItem.classList += 'check-stamp';
+                } else if (formItem.tagName == 'BUTTON') {
+                    ++formNum.sign;
+                    formItem.setAttribute("id", `signStamp${formNum.sign - 1}`);
+                    formItem.classList += 'sign-stamp';
+                }
+
+                const area = document.querySelector(".area");
+                area.appendChild(formWrap);
+                formWrap.appendChild(formItem);
+
+                const container = document.querySelector(".area");
+                const box = container.querySelectorAll(".drag-form");
+
+                box.forEach(element => {
+                    
+                    const {width: containerWidth, height: containerHeight} = container.getBoundingClientRect();
+                    const {width: elementWidth, height: elementHeight} = element.getBoundingClientRect();
+                    let isDragging = null;
+                    let originLeft = null;
+                    let originTop = null;
+                    let originX = null;
+                    let originY = null;
+
+                    element.addEventListener("click", ()=>{
+                        console.log("클릭됐음");
+                    });
+                    
+
+                    element.addEventListener("mousedown", (e)=>{
+                        
+                        if(isDragging==true){
+                            isDragging = false;
+                        }
+                        else{
+                            isDragging = true;
+                            originX = e.clientX;
+                            originY = e.clientY;
+                            originLeft = element.offsetLeft;
+                            originTop = element.offsetTop;
+                            
+                        }
+                    });
+
+                    document.addEventListener("mouseup", (e)=>{
+                        isDragging = false;
+                    });
+
+                    document.addEventListener("mousemove", (e)=>{
+                        if(isDragging){
+                            const diffX = e.clientX - originX;
+                            const diffY = e.clientY - originY;
+                            const endOfXPoint = containerWidth - elementWidth;
+                            const endOfYPoint = containerHeight - elementHeight;
+                            element.style.left = `${Math.min(Math.max(0, originLeft + diffX), endOfXPoint)}px`;
+                            element.style.top = `${Math.min(Math.max(0, originTop + diffY), endOfYPoint)}px`;
+                        }
+                    });
+                });
+        }
+
+        // const container = document.querySelector(".area");
+        // const box = container.querySelectorAll(".drag-form");
+
+        // console.log(box);
+        // const container = document.querySelector(".area");
+        // const box = container.querySelectorAll(".drag-form");
+
+        // box.forEach(element => {
+        //     console.log(box);
+        //     const {width: containerWidth, height: containerHeight} = container.getBoundingClientRect();
+        //     const {width: elementWidth, height: elementHeight} = element.getBoundingClientRect();
+        //     let isDragging = null;
+        //     let originLeft = null;
+        //     let originTop = null;
+        //     let originX = null;
+        //     let originY = null;
+
+        //     element.addEventListener("click", ()=>{
+        //         console.log("클릭됐음");
+        //     });
+            
+
+        //     element.addEventListener("mousedown", (e)=>{
+        //         console.log("클릭됐음");
+                
+        //         if(isDragging==true){
+        //             isDragging = false;
+        //         }
+        //         else{
+        //             isDragging = true;
+        //             originX = e.clientX;
+        //             originY = e.clientY;
+        //             originLeft = element.offsetLeft;
+        //             originTop = element.offsetTop;
+                    
+        //         }
+        //     });
+
+        //     document.addEventListener("mouseup", (e)=>{
+        //         isDragging = false;
+        //     });
+
+        //     document.addEventListener("mousemove", (e)=>{
+        //         if(isDragging){
+        //             const diffX = e.clientX - originX;
+        //             const diffY = e.clientY - originY;
+        //             const endOfXPoint = containerWidth - elementWidth;
+        //             const endOfYPoint = containerHeight - elementHeight;
+        //             element.style.left = `${Math.min(Math.max(0, originLeft + diffX), endOfXPoint)}px`;
+        //             element.style.top = `${Math.min(Math.max(0, originTop + diffY), endOfYPoint)}px`;
+        //         }
+        //     });
+        // });
+    </script>
+    <script>
+
+    </script>
+</body>
+</html>

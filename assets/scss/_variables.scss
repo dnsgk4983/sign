@@ -1,0 +1,38 @@
+// variables
+
+// color
+$white-color: #fff;
+$font-color: #000;
+$gray-color: #aaa;
+$light-gray-color: #d7d7d7;
+$dark-gray-color: #797979;
+
+// button
+$bottom-nav-bg: #7f7f7f;
+$bottom-nav-next-color: #666;
+$bottom-nav-next-border: #555;
+
+// modal
+$modal-outer-bg: #555;
+$modal-inner-bg: #f2f2f2;
+$yellow-color: #fdd621;
+$web-font-color: #333;
+
+// breakpoint
+$pc: 1024px;
+$tablet: 768px;
+$mobile: 480px;
+
+// font-weight
+$font-weights:(
+    "thin": 100,
+    "light": 300,
+    "regular": 400,
+    "medium": 500,
+    "bold": 700,
+    "black": 900
+);
+
+@function weight($weight-name) {
+    @return map-get($font-weights, $weight-name);
+}
